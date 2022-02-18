@@ -8,16 +8,13 @@ public class Main {
         System.out.println("Номер года - " + n + "високосный год");
         return n;
     }
+
     public static boolean checkLeapYear(int year) {
-        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0);
     }
 
     // Задание 2 (методы)
-    public static String printApplication(int type, int year) {
+    public static void printApplication(int type, int year) {
         String OS = "Android";
         String version = "";
         if (type == 0) {
@@ -27,29 +24,28 @@ public class Main {
             version = "облегченную ";
         }
         System.out.println("Установите " + version + "версию приложения для " + OS + " по ссылке");
-        return OS;
     }
 
     // Задание 3 (метод)
-    public static int numbersDays(int distance){
+    public static int numbersDays(int distance) {
         int day = 1;
         if (distance <= 20) {
             day = day;
         } else if (distance > 20 && distance <= 60) {
             day = day + 1;
-            } else if (distance > 60 && distance <=100) {
+        } else if (distance > 60 && distance <= 100) {
             day = day + 2;
-            }
+        }
         return day;
     }
 
     // Задание 4 (метод)
-    public static void printAnswerCheckLine(String line){
+    public static void printAnswerCheckLine(String line) {
         for (int i = 0; i < line.length() - 1; i++) {
-            if (line.charAt(i) == line.charAt(i + 1)){
+            if (line.charAt(i) == line.charAt(i + 1)) {
                 System.out.println("есть дубль: " + line.charAt(i));
                 break;
-            } else if(i == line.length() - 2) {
+            } else if (i == line.length() - 2) {
                 System.out.println("нет дублей");
             }
         }
@@ -66,7 +62,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-	// Задание 1
+        // Задание 1
         int year = 2021;
         String not = "не ";
         if (checkLeapYear(year)) {
@@ -88,7 +84,7 @@ public class Main {
         printAnswerCheckLine(line);
 
         // Задание 5
-        int[] arr = new int[] {3, 5, 7, 2, 1};
+        int[] arr = new int[]{3, 5, 7, 2, 1};
         ternArray(arr);
         System.out.println(Arrays.toString(arr));
     }
