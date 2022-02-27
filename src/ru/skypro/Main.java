@@ -63,7 +63,6 @@ public class Main {
     // Задание 6 (метод)
 
     // Генератор случайных чисел
-    int[] arr = generateRandomArray();
 
     public static int[] generateRandomArray() {
         java.util.Random random = new java.util.Random();
@@ -74,7 +73,7 @@ public class Main {
         return arr;
     }
 
-    public static int spending (int[] arr) {
+    public static int spending(int[] arr) {
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
             sum = sum + arr[i];
@@ -82,18 +81,17 @@ public class Main {
         return sum;
     }
 
-    public static int days(int[] arr) {
-        int day = arr.length;
-        return day;
-    }
-
-    public static float average(int monthSpending, int days) {
-        float a = monthSpending / days;
+    public static float average(int[] arr) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum = sum + arr[i];
+        }
+        float a = sum / arr.length;
         return a;
     }
 
     public static void printing(int spending, float average) {
-        System.out.println( "Сумма трат за месяц составила " + spending + " рублей");
+        System.out.println("Сумма трат за месяц составила " + spending + " рублей");
         System.out.println("Средняя сумма трат за месяц составила " + average + " рублей");
     }
 
@@ -127,13 +125,7 @@ public class Main {
 
         // Задание 6
         int[] data = generateRandomArray();
-
         System.out.println(Arrays.toString(data));
-
-        int monthSpending = spending(data);
-        int numberOfDays = days(data);
-        float averageSpending = average(monthSpending, numberOfDays);
-
-        printing(monthSpending, averageSpending);
+        printing(spending(data), average(data));
     }
 }
